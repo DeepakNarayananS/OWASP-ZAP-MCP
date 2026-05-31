@@ -1,0 +1,22 @@
+{
+  "servers": {
+    "zapMcp": {
+      "type": "stdio",
+      "command": "npx.cmd",
+      "envFile": "${workspaceFolder}/.env",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://localhost:8282",
+        "--silent",
+        "--transport",
+        "http-first",
+        "--header",
+        "Authorization: ${ZAP_API_KEY}"
+      ],
+      "env": {
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+      }
+    }
+  }
+}
